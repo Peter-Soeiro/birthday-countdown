@@ -1,15 +1,20 @@
 let countDownDate = new Date("Sep 15, 2022 00:00:00");
 
-// Uploads every second (1000 miliseconds)
+// Uploads every 0.1 seconds (100 milliseconds)
 let myInterval = setInterval(function () {
-   let countDownTime = countDownDate.getTime();
-   let today = new Date().getTime();
-   let timeLeft = countDownTime - today;
+   let today = new Date();
+
+   if ((today.getDate() == 15) & (today.getMonth() == 8)) {
+      document.querySelector(".message").classList.remove("hidden");
+   } else {
+      document.querySelector(".message").classList.add("hidden");
+   }
+
+   let timeLeft = countDownDate.getTime() - today.getTime();
 
    if (timeLeft <= 0) {
       countDownDate.setFullYear(countDownDate.getFullYear() + 1);
-      countDownTime = countDownDate.getTime();
-      timeLeft = countDownTime - today;
+      timeLeft = countDownDate.getTime() - today.getTime();
    }
 
    const days = timeLeft / 1000 / 60 / 60 / 24;
@@ -19,4 +24,4 @@ let myInterval = setInterval(function () {
    document.querySelector(".days").innerHTML = Math.floor(days);
    document.querySelector(".hours").innerHTML = Math.floor(hours);
    document.querySelector(".minutes").innerHTML = Math.floor(minutes);
-}, 1000);
+}, 100); // 100 milliseconds

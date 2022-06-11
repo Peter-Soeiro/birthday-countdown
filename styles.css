@@ -1,3 +1,7 @@
+html {
+   font-size: 70%;
+}
+
 *,
 *::after,
 *::before {
@@ -14,7 +18,7 @@ body {
 }
 
 .container {
-   padding-top: 20vh;
+   padding-top: 18vh;
    display: grid;
    place-items: center;
 }
@@ -22,11 +26,15 @@ body {
 h1 {
    color: #495055;
    font-weight: 400;
-   margin-bottom: 3rem;
-   font-size: 6rem;
+   margin-bottom: 4rem;
+   font-size: 6.5rem;
 }
 
 .timer {
+   position: relative;
+}
+
+.row {
    display: flex;
 }
 
@@ -61,7 +69,33 @@ p {
    transform: rotate(180deg);
 }
 
-.bg-circle {
+.message {
+   width: 49rem;
+   height: 15rem;
+   background-color: #495055;
+   position: absolute;
+   top: 0;
+   z-index: 2;
+   display: grid;
+   place-content: center;
+   overflow: hidden;
+}
+
+.hidden {
+   visibility: hidden;
+}
+
+.message__circle {
+   position: absolute;
+   background-color: #484d51;
+   width: 250rem;
+   height: 250rem;
+   bottom: -235rem;
+   right: -135rem;
+   border-radius: 50%;
+}
+
+.card__circle {
    position: absolute;
    background-color: #484d51;
    width: 38rem;
