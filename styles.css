@@ -53,8 +53,9 @@ h1 {
 }
 
 h2 {
+   font-weight: 400;
    color: #de2c5c;
-   font-size: 6rem;
+   font-size: 6.5rem;
    z-index: 1;
 }
 
